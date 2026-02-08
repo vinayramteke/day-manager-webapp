@@ -20,13 +20,9 @@ app.use(cors());
 app.use(express.json());
 
 // --- 1. Database Connection ---
-// Ensure you have MongoDB installed and running locally!
-const MONGO_URI = "mongodb://localhost:27017/day-manager";
-// const MONGO_URI =
-//   "mongodb+srv://vinay:vinay123@cluster0.t1zavom.mongodb.net/?appName=Cluster0";
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(process.env.MONGO_URI || "mongodb://localhost:27017/day-manager")
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
