@@ -17,11 +17,16 @@ import {
 //   },
 // };
 
+const isProduction = import.meta.env.PROD; // Automatically true on Vercel
+
 export const APP_CONFIG = {
   name: "Day Manager",
   version: "Cloud v1.1",
   // apiUrl: "http://localhost:5000/api",
-  apiUrl: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  // apiUrl: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  apiUrl: isProduction
+    ? import.meta.env.VITE_API_URL // This comes from Vercel settings
+    : "http://localhost:5000", // Your local backend
 };
 
 export const NAV_ITEMS = [
