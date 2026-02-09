@@ -20,7 +20,8 @@ import {
 export const APP_CONFIG = {
   name: "Day Manager",
   version: "Cloud v1.1",
-  apiUrl: "http://localhost:5000/api",
+  // apiUrl: "http://localhost:5000/api",
+  apiUrl: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
 };
 
 export const NAV_ITEMS = [
