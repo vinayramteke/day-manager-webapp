@@ -26,7 +26,7 @@ export const APP_CONFIG = {
   // apiUrl: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
   apiUrl: isProduction
     ? import.meta.env.VITE_API_URL // This comes from Vercel settings
-    : "http://localhost:5000", // Your local backend
+    : "http://localhost:5000/api", // Your local backend
 };
 
 export const NAV_ITEMS = [
